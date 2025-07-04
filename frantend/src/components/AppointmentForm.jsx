@@ -24,7 +24,6 @@ const AppointmentForm = () => {
     "Cardiology",
     "Neurology",
     "Oncology",
-    "psychology",
     "Radiology",
     "Physical Therapy",
     "Dermatology",
