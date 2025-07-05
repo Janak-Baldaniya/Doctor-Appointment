@@ -8,7 +8,7 @@ const AppointmentForm = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nic, setNic] = useState("");
+  const [AdharNumber, setAdharNumber] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
@@ -56,7 +56,7 @@ const AppointmentForm = () => {
           lastName,
           email,
           phone,
-          nic,
+          AdharNumber,
           dob,
           gender,
           appointment_date: appointmentDate,
@@ -76,7 +76,7 @@ const AppointmentForm = () => {
         setLastName(""),
         setEmail(""),
         setPhone(""),
-        setNic(""),
+        setAdharNumber(""),
         setDob(""),
         setGender(""),
         setAppointmentDate(""),
@@ -126,9 +126,9 @@ const AppointmentForm = () => {
           <div>
             <input
               type="number"
-              placeholder="NIC"
-              value={nic}
-              onChange={(e) => setNic(e.target.value)}
+              placeholder="Adhar Number"
+              value={AdharNumber}
+              onChange={(e) => setAdharNumber(e.target.value)}
             />
             <input
               type="date"

@@ -7,14 +7,14 @@ import cloudinary from "cloudinary";
 
 
 export const patientRegister = catchAsyncErrors(async (req, res, next) => {
-    const { firstName, lastName, email, phone, nic, dob, gender, password } =
+    const { firstName, lastName, email, phone, AdharNumber, dob, gender, password } =
         req.body;
     if (
         !firstName ||
         !lastName ||
         !email ||
         !phone ||
-        !nic ||
+        !AdharNumber ||
         !dob ||
         !gender ||
         !password
@@ -38,7 +38,7 @@ export const patientRegister = catchAsyncErrors(async (req, res, next) => {
         lastName,
         email,
         phone,
-        nic,
+        AdharNumber,
         dob,
         gender,
         password,
@@ -81,14 +81,14 @@ export const login = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const addNewAdmin = catchAsyncErrors(async (req, res, next) => {
-    const { firstName, lastName, email, phone, nic, dob, gender, password } =
+    const { firstName, lastName, email, phone, AdharNumber, dob, gender, password } =
         req.body;
     if (
         !firstName ||
         !lastName ||
         !email ||
         !phone ||
-        !nic ||
+        !AdharNumber ||
         !dob ||
         !gender ||
         !password
@@ -112,7 +112,7 @@ export const addNewAdmin = catchAsyncErrors(async (req, res, next) => {
         lastName,
         email,
         phone,
-        nic,
+        AdharNumber,
         dob,
         gender,
         password,
@@ -190,7 +190,7 @@ export const addNewDoctor = catchAsyncErrors(async (req, res) => {
         lastName,
         email,
         phone,
-        nic,
+        AdharNumber,
         dob,
         gender,
         password,
@@ -201,7 +201,7 @@ export const addNewDoctor = catchAsyncErrors(async (req, res) => {
         !lastName ||
         !email ||
         !phone ||
-        !nic ||
+        !AdharNumber ||
         !dob ||
         !gender ||
         !password ||
@@ -238,7 +238,7 @@ export const addNewDoctor = catchAsyncErrors(async (req, res) => {
         lastName,
         email,
         phone,
-        nic,
+        AdharNumber,
         dob,
         gender,
         password,
