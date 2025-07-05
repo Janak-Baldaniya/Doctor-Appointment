@@ -10,6 +10,7 @@ export const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
 
 
+
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
@@ -81,7 +82,7 @@ export const Dashboard = () => {
   };
 
   const { isAuthenticated, admin } = useContext(Context);
-  console.log("admin value:", admin);
+  // console.log("admin value:", admin);
   if (!isAuthenticated) {
     return <Navigate to={"/login"} />;
   }
@@ -98,9 +99,8 @@ export const Dashboard = () => {
                 <h5>{admin && `${admin.firstName} ${admin.lastName}`}</h5>
               </div>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
-                Assumenda repellendus necessitatibus itaque.
+                Welcome to the Doctor Appointment Dashboard. Here you can manage
+                all the appointments, doctors, and other administrative tasks.
               </p>
             </div>
           </div>

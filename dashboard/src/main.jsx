@@ -8,8 +8,9 @@ import { App } from "./App.jsx";
 export const Context = createContext({ isAuthenticated: false });
 
 const AppWrapper = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [admin, setAdmin] = useState({});
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
 
   return (
     <Context.Provider
