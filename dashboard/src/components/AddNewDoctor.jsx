@@ -132,7 +132,7 @@ export const AddNewDoctor = () => {
               />
               <input
                 type="number"
-                placeholder="Adhar Number"
+                placeholder="NIC"
                 value={AdharNumber}
                 onChange={(e) => setAdharNumber(e.target.value)}
               />
