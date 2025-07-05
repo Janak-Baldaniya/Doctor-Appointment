@@ -133,8 +133,8 @@ export const AddNewDoctor = () => {
               <input
                 type="number"
                 placeholder="NIC"
-                value={nic}
-                onChange={(e) => setNic(e.target.value)}
+                value={AdharNumber}
+                onChange={(e) => setAdharNumber(e.target.value)}
               />
               <input
                 type={"date"}
