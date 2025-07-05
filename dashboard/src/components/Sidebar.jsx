@@ -11,17 +11,19 @@ import axios from "axios";
 import { Context } from "../main";
 import { toast } from "react-toastify";
 
-
 export const Sidebar = () => {
   const [show, setShow] = useState(false);
 
-  const {isAuthenticated, setIsAuthenticated } = useContext(Context);
+  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/admin/logout", {
-        withCredentials: true,
-      })
+      .get(
+        "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/admin/logout",
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         toast.success(res.data.message);
         setIsAuthenticated(false);

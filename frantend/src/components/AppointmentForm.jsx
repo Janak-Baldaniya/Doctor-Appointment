@@ -28,15 +28,13 @@ const AppointmentForm = () => {
     "Physical Therapy",
     "Dermatology",
     "ENT",
-    
   ];
-
 
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/doctors",
+        "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/doctors",
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -50,7 +48,7 @@ const AppointmentForm = () => {
     try {
       const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/appointment/post",
+        "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/appointment/post",
         {
           firstName,
           lastName,
@@ -93,8 +91,12 @@ const AppointmentForm = () => {
   return (
     <>
       <div className="container form-component appointment-form">
-        <h2 style={{ textAlign: "center", color: "#271776", marginTop: "100px" }}>Appointment</h2>
-        <form onSubmit={handleAppointment} >
+        <h2
+          style={{ textAlign: "center", color: "#271776", marginTop: "100px" }}
+        >
+          Appointment
+        </h2>
+        <form onSubmit={handleAppointment}>
           <div>
             <input
               type="text"

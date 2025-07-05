@@ -9,13 +9,12 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
-
   const navigateTo = useNavigate();
   // ...existing code...
   const handleLogout = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/v1/user/patient/logout",
+        "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/patient/logout",
         {
           withCredentials: true,
         }
@@ -29,7 +28,6 @@ const Navbar = () => {
       toast.error(error.response?.data?.message || "Logout failed");
     }
   };
-
 
   const goToLogin = () => {
     navigateTo("/login");

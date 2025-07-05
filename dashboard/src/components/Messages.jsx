@@ -12,7 +12,7 @@ export const Messages = () => {
     const fetchMessages = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/message/getAll",
+          "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/message/getAll",
           { withCredentials: true }
         );
         setMessages(data.messages);
@@ -62,6 +62,5 @@ export const Messages = () => {
     </section>
   );
 };
-
 
 //6.17.00

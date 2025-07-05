@@ -11,7 +11,7 @@ export const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctors",
+          "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/doctors",
           { withCredentials: true }
         );
         setDoctors(data.doctors);
@@ -29,7 +29,7 @@ export const Doctors = () => {
   const deleteDoctor = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:4000/api/v1/user/doctor/delete/${id}`,
+        `https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/doctor/delete/${id}`,
         {
           withCredentials: true,
         }
@@ -74,25 +74,25 @@ export const Doctors = () => {
                     Gender: <span>{element.gender}</span>
                   </p>
                   {/* <div style={{ display: "flex", alignItems: "center" }}> */}
-                    <button
-                      onClick={() => deleteDoctor(element._id)}
-                      style={{
-                        cursor: "pointer",
-                        background: "#dc2626",
-                        color: "#fff",
-                        height: "40px",
-                        width: "50%",
-                        borderRadius: "5px",
-                        border: "none",
-                        fontSize: "16px",
-                        alignItems: "center",
-                        display: "flex",
-                        justifyContent: "center",
-                        fontWeight: "600",
-                      }}
-                    >
-                      Remove Doctor
-                    </button>
+                  <button
+                    onClick={() => deleteDoctor(element._id)}
+                    style={{
+                      cursor: "pointer",
+                      background: "#dc2626",
+                      color: "#fff",
+                      height: "40px",
+                      width: "50%",
+                      borderRadius: "5px",
+                      border: "none",
+                      fontSize: "16px",
+                      alignItems: "center",
+                      display: "flex",
+                      justifyContent: "center",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Remove Doctor
+                  </button>
                   {/* </div> */}
                 </div>
               </div>

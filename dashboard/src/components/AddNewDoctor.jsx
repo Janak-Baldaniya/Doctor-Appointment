@@ -59,10 +59,14 @@ export const AddNewDoctor = () => {
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
       await axios
-        .post("http://localhost:4000/api/v1/user/doctor/addnew", formData, {
-          withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
-        })
+        .post(
+          "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/doctor/addnew",
+          formData,
+          {
+            withCredentials: true,
+            headers: { "Content-Type": "multipart/form-data" },
+          }
+        )
         .then((res) => {
           toast.success(res.data.message);
           setIsAuthenticated(true);
@@ -167,7 +171,9 @@ export const AddNewDoctor = () => {
                   );
                 })}
               </select>
-              <button style={{cursor:"pointer"}} type="submit">Register New Doctor</button>
+              <button style={{ cursor: "pointer" }} type="submit">
+                Register New Doctor
+              </button>
             </div>
           </div>
         </form>

@@ -40,7 +40,7 @@ const MessageForm = () => {
     if (!validateForm()) return;
     try {
       await axios.post(
-        "http://localhost:4000/api/v1/message/send",
+        "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/message/send",
         { firstName, lastName, email, phone, message },
         { headers: { "Content-Type": "application/json" } }
       );

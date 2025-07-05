@@ -4,12 +4,10 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { Context } from "../main";
 import { AiFillCloseCircle } from "react-icons/ai";
-import {Doctors} from "./Doctors"
+import { Doctors } from "./Doctors";
 
 export const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
-
-
 
   const [doctors, setDoctors] = useState([]);
 
@@ -17,7 +15,7 @@ export const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/getAll",
+          "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/appointment/getAll",
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -33,7 +31,7 @@ export const Dashboard = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctors",
+          "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/doctors",
           { withCredentials: true }
         );
         setDoctors(data.doctors);
@@ -47,7 +45,7 @@ export const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `https://doctor-appointment-backend-ozjb.onrender.com/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );
@@ -67,7 +65,7 @@ export const Dashboard = () => {
   const deleteAppointment = async (appointmentId) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:4000/api/v1/appointment/delete/${appointmentId}`,
+        `https://doctor-appointment-backend-ozjb.onrender.com/api/v1/appointment/delete/${appointmentId}`,
         { withCredentials: true }
       );
       setAppointments((prevAppointments) =>

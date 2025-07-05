@@ -11,7 +11,7 @@ import { Doctors } from "./components/Doctors.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import "./App.css"
+import "./App.css";
 
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, admin, setAdmin } =
@@ -21,7 +21,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/admin/me",
+          "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/admin/me",
           {
             withCredentials: true,
           }
