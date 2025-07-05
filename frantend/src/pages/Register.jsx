@@ -26,7 +26,7 @@ const Register = () => {
       await axios
         .post(
           "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/patient/register",
-          { firstName, lastName, email, phone, nic, dob, gender, password },
+          { firstName, lastName, email, phone, AdharNumber, dob, gender, password },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
