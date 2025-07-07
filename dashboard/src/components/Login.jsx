@@ -31,7 +31,8 @@ export const Login = () => {
         navigateTo("/");
       }
     } catch (error) {
-      toast.error(error.response?.data?.message || "Login failed");
+      toast.error(error.response.data.message);
+    }
     }
   };
 
