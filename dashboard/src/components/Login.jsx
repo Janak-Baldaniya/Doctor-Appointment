@@ -48,7 +48,7 @@ export const Login = () => {
         <p>Only Admins Are Allowed To Access These Resources!</p>
         <form onSubmit={handleLogin}>
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -60,7 +60,7 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <div style={{ justifyContent: "center", alignItems: "center" }}>
+          <div style={{display: "flex", justifyContent: "center", alignItems: "center" }}>
             <button type="submit">Login</button>
           </div>
         </form>
