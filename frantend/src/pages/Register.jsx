@@ -23,39 +23,40 @@ const Register = () => {
   const handleRegistration = async (e) => {
     e.preventDefault();
     try {
-      await axios
-        .post(
-          "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/patient/register",
-          {
-            firstName,
-            lastName,
-            email,
-            phone,
-            AdharNumber,
-            dob,
-            gender,
-            password,
-          },
-          {
-            withCredentials: true,
-            headers: { "Content-Type": "application/json" },
-          }
-        )
-        .then((res) => {
-          toast.success(res.data.message);
-          setIsAuthenticated(true);
-          navigateTo("/");
-          setFirstName("");
-          setLastName("");
-          setEmail("");
-          setPhone("");
-          setAdharNumber("");
-          setDob("");
-          setGender("");
-          setPassword("");
-        });
+      const res = await axios.post(
+        "https://doctor-appointment-backend-ozjb.onrender.com/api/v1/user/patient/register",
+        {
+          firstName,
+          lastName,
+          email,
+          phone,
+          AdharNumber,
+          dob,
+          gender,
+          password,
+        },
+        {
+          withCredentials: true,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      toast.success(res.data.message);
+      setIsAuthenticated(true);
+      navigateTo("/");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+      setAdharNumber("");
+      setDob("");
+      setGender("");
+      setPassword("");
     } catch (error) {
-      toast.error(error.response.data.message);
+      console.error(error); // Add this line for debugging
+      toast.error(
+        error.response?.data?.message ||
+          "Registration failed. Please try again."
+      );
     }
   };
 
