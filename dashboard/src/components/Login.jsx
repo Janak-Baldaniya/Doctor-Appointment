@@ -33,8 +33,7 @@ export const Login = () => {
     } catch (error) {
       toast.error(error.response.data.message);
     }
-    }
-  };
+  }; 
 
   // Redirect if user is already authenticated
   if (isAuthenticated) {
