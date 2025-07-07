@@ -125,13 +125,13 @@ export const AddNewDoctor = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
-                type="number"
+                type="text"
                 placeholder="Mobile Number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
               <input
-                type="number"
+                type="text"
                 placeholder="Adhar Number"
                 value={AdharNumber}
                 onChange={(e) => setAdharNumber(e.target.value)}
