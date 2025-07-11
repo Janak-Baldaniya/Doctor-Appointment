@@ -33,7 +33,7 @@ export const Login = () => {
     } catch (error) {
       toast.error(error.response.data.message);
     }
-  }; 
+  };
 
   // Redirect if user is already authenticated
   if (isAuthenticated) {
@@ -60,7 +60,13 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <div style={{display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <button type="submit">Login</button>
           </div>
         </form>
