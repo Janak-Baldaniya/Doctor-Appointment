@@ -1,8 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../main";
-import { useNavigate } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Navigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 
@@ -40,23 +38,30 @@ const Register = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      toast.success(res.data.message);
-      setIsAuthenticated(true);
-      navigateTo("/");
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setAdharNumber("");
-      setDob("");
-      setGender("");
-      setPassword("");
+      // Check if res and res.data exist before accessing message
+      if (res && res.data && res.data.message) {
+        toast.success(res.data.message);
+        setIsAuthenticated(true);
+        navigateTo("/");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPhone("");
+        setAdharNumber("");
+        setDob("");
+        setGender("");
+        setPassword("");
+      } else {
+        toast.error("Registration succeeded but no message received.");
+      }
     } catch (error) {
-      console.error(error); // Add this line for debugging
-      toast.error(
-        error.response?.data?.message ||
-          "Registration failed. Please try again."
-      );
+      console.error(error);
+      // Check for error response and message
+      const errorMsg =
+        error?.response?.data?.message ||
+        error?.message ||
+        "Registration failed. Please try again.";
+      toast.error(errorMsg);
     }
   };
 
@@ -110,7 +115,7 @@ const Register = () => {
               onChange={(e) => setAdharNumber(e.target.value)}
             />
             <input
-              type={"date"}
+              type="date"
               placeholder="Date of Birth"
               value={dob}
               onChange={(e) => setDob(e.target.value)}
